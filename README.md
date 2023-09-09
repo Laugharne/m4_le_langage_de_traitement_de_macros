@@ -72,7 +72,7 @@ Il existe une manière simple de résoudre le problème de la confusion entre le
 
 ```php
 define(`M1',`text1')M1     # -> define(M1,text1)M1
-m4\_define(`M1',`text1')M1 # -> text1
+m4_define(`M1',`text1')M1 # -> text1
 ```
 
 **Exemples simples :**
@@ -86,11 +86,11 @@ divert(-1)
 La commande `divert' permet d'ignorer ce texte. Notez cependant que j'ai dû mettre entre guillemets le mot `divert' pour qu'il ne soit pas pris en compte.
 
 # Initialise le compteur à 1.
-define(`H2\_COUNT', 1)
+define(`H2_COUNT', 1)
 
-# La macro H2\_COUNT est redéfinie à chaque fois que la macro H2 est utilisée.
+# La macro H2_COUNT est redéfinie à chaque fois que la macro H2 est utilisée.
 
-define(`H2', `<h2>H2\_COUNT. $1</h2>define(`H2\_COUNT', incr(H2\_COUNT))')
+define(`H2', `<h2>H2_COUNT. $1</h2>define(`H2_COUNT', incr(H2_COUNT))')
 
 divert(0)dnl Remise à 0 de divert. L’instruction dnl élimine cette ligne.
 
@@ -170,7 +170,7 @@ Les boucles **while** :
 
 define(`while',`ifelse($#,0,``$0'',eval($1+0),1,`$2`'$0($@)')')
 
-define(`POW2',2) while(`POW2<=1000',`define(`POW2',eval(POW2\*2))')
+define(`POW2',2) while(`POW2<=1000',`define(`POW2',eval(POW2*2))')
 POW2 # -> 1024
 ```
 
